@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="CsvConvertExample.Implementations.CsvProcessor" BaseTypeListCollapsed="true">
+  <Class Name="CsvConvertExample.Implementations.CsvProcessor&lt;T&gt;" BaseTypeListCollapsed="true">
     <Position X="10.25" Y="1.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAQAAA=</HashCode>

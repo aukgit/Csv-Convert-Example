@@ -1,18 +1,19 @@
-﻿using System;
+﻿#region using block
+
+using System;
 using System.Collections.Generic;
 using CsvConvertExample.Interfaces;
 
-namespace CsvConvertExample.Implementations {
-    public class CsvProcessor<T> : 
-        IFileWriter<T>, 
-        ICsvReader<T>, 
-        IProcessCsv<T>, 
-        IOrderByAddress<T>, 
-        IOrderByName<T>
+#endregion
+
+namespace CsvConvertExample.Implementations
+{
+    public class CsvProcessor<T> : IFileWriter<T>, ICsvReader<T>, IProcessCsv<T>, IOrderByAddress<T>, IOrderByName<T>
     {
         #region IFileWriter Members
 
-        public void WriteToFile(List<T> list) {
+        public void WriteToFile(List<T> list)
+        {
             throw new NotImplementedException();
         }
 
@@ -20,7 +21,8 @@ namespace CsvConvertExample.Implementations {
 
         #region ICsvReader Members
 
-        public List<T> ReadCsv(string filePath) {
+        public List<T> ReadCsv(string filePath)
+        {
             throw new NotImplementedException();
         }
 
@@ -37,7 +39,8 @@ namespace CsvConvertExample.Implementations {
 
         #region Implementation of IOrderByAddress<T>
 
-        public List<T> OrderByAddress(List<T> list) {
+        public List<T> OrderByAddress(List<T> list)
+        {
             return null;
         }
 
@@ -45,7 +48,8 @@ namespace CsvConvertExample.Implementations {
 
         #region Implementation of IOrderByName<T>
 
-        public List<T> OrderByName(List<T> list) {
+        public List<T> OrderByName(List<T> list)
+        {
             return null;
         }
 

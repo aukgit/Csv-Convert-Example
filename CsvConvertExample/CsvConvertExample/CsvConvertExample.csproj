@@ -54,7 +54,7 @@
     <Compile Include="Interfaces\IOrderByAddress.cs" />
     <Compile Include="Interfaces\IOrderByName.cs" />
     <Compile Include="Implementations\OrderByAddress.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="DataLayer\Person.cs" />
     <Compile Include="Implementations\OrderByName.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,9 +65,7 @@
     <None Include="Diagrams\SolutionDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

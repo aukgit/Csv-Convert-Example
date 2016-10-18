@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
+﻿#region using block
 
-namespace CsvConvertExample.Interfaces {
+using System.Collections.Generic;
+
+#endregion
+
+namespace CsvConvertExample.Interfaces
+{
     public interface IProcessCsv<T> : IProcess<T>
     {
         void ProcessCsv(List<T> list);

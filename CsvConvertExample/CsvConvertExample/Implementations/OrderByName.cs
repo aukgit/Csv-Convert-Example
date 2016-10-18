@@ -1,12 +1,14 @@
-﻿using System;
+﻿#region using block
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using CsvConvertExample.Interfaces;
 
-namespace CsvConvertExample
+#endregion
+
+namespace CsvConvertExample.Implementations
 {
-    public class NameFrequency<T> : Interfaces.IOrderByName<T>
+    public class NameFrequency<T> : IOrderByName<T>
     {
         #region IOrderByName<object> Members
 

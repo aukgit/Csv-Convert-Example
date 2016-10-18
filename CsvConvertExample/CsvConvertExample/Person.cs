@@ -25,7 +25,7 @@ namespace CsvConvertExample
             set;
         }
 
-        public int PhoneNumber
+        public long PhoneNumber
         {
             get;
             set;

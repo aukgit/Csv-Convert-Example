@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using CsvConvertExample.Interfaces;
 
 namespace CsvConvertExample.Implementations {
-    public class CsvProcessor : IFileWriter, ICsvReader, ICsvParser {
+    public class CsvProcessor<T> : IFileWriter<T>, ICsvReader<T>, ICsvParser<T>
+    {
         #region IFileWriter Members
 
-        public void WriteToFile() {
+        public void WriteToFile(List<T> list) {
             throw new NotImplementedException();
         }
 
@@ -13,7 +15,7 @@ namespace CsvConvertExample.Implementations {
 
         #region ICsvReader Members
 
-        public void ReadCsv() {
+        public List<T> ReadCsv() {
             throw new NotImplementedException();
         }
 
@@ -21,7 +23,8 @@ namespace CsvConvertExample.Implementations {
 
         #region ICsvParser Members
 
-        public void ParseCsv() {
+        public List<T> ParseCsv()
+        {
             throw new NotImplementedException();
         }
 

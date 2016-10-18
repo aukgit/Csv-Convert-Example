@@ -3,18 +3,29 @@
 using System;
 using System.Collections.Generic;
 using CsvConvertExample.Interfaces;
+using Ninject;
 
 #endregion
 
 namespace CsvConvertExample.Implementations
 {
-    public class CsvProcessor<T> : IFileWriter<T>, ICsvReader<T>, IProcessCsv<T>, IOrderByAddress<T>, IOrderByName<T>
+    public class CsvProcessor<T> : 
+        IFileWriter<T>, ICsvReader<T>, IOrderByAddress<T>, IOrderByName<T>
     {
+        [Inject]
+        public IFileWriter<T> FileWriter { get; set; }
+        [Inject]
+        public ICsvReader<T> CsvReader { get; set; }
+        [Inject]
+        public IOrderByName<T> NameFrequencyProcessor { get; set; }
+        [Inject]
+        public IOrderByAddress<T> AddressOrderFilter { get; set; }
+
         #region IFileWriter Members
 
         public void WriteToFile(List<T> list)
         {
-            throw new NotImplementedException();
+            FileWriter.WriteToFile(list);
         }
 
         #endregion
@@ -23,25 +34,17 @@ namespace CsvConvertExample.Implementations
 
         public List<T> ReadCsv(string filePath)
         {
-            throw new NotImplementedException();
+            return CsvReader.ReadCsv(filePath);
         }
 
         #endregion
 
-        #region IProcessCsv Members
-
-        public void ProcessCsv(List<T> list)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
 
         #region Implementation of IOrderByAddress<T>
 
         public List<T> OrderByAddress(List<T> list)
         {
-            return null;
+            return AddressOrderFilter.OrderByAddress(list);
         }
 
         #endregion
@@ -50,7 +53,7 @@ namespace CsvConvertExample.Implementations
 
         public List<T> OrderByName(List<T> list)
         {
-            return null;
+            return NameFrequencyProcessor.OrderByName(list);
         }
 
         #endregion

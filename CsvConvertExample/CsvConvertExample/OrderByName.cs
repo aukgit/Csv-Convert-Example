@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CsvConvertExample.Interfaces;
 
 namespace CsvConvertExample
 {
-    public class OrderByName : CsvConvertExample.Interfaces.IOrderByName<System.Object>
+    public class NameFrequency<T> : Interfaces.IOrderByName<T>
     {
         #region IOrderByName<object> Members
 
-        public List<object> OrderByName()
+        public List<T> OrderByName(List<T> list)
         {
             throw new NotImplementedException();
         }

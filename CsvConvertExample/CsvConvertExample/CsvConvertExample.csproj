@@ -51,9 +51,11 @@
     <Compile Include="Interfaces\IFileWriter.cs" />
     <Compile Include="Interfaces\IOrderFilter.cs" />
     <Compile Include="Interfaces\IProcess.cs" />
-    <Compile Include="Interfaces\IProcessByAddress.cs" />
-    <Compile Include="Interfaces\IProcessByName.cs" />
+    <Compile Include="Interfaces\IOrderByAddress.cs" />
+    <Compile Include="Interfaces\IOrderByName.cs" />
+    <Compile Include="OrderByAddress.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="OrderByName.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -35,20 +35,18 @@ namespace CsvConvertExample.Implementations {
 
         #endregion
 
-        #region IOrderByAddress<T> Members
+        #region Implementation of IOrderByAddress<T>
 
-        public List<T> OrderByName()
-        {
-            throw new NotImplementedException();
+        public List<T> OrderByAddress(List<T> list) {
+            return null;
         }
 
         #endregion
 
-        #region IOrderByName<T> Members
+        #region Implementation of IOrderByName<T>
 
-        public List<T> OrderByName()
-        {
-            throw new NotImplementedException();
+        public List<T> OrderByName(List<T> list) {
+            return null;
         }
 
         #endregion

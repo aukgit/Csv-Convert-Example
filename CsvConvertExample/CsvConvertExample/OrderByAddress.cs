@@ -5,13 +5,12 @@ using System.Text;
 
 namespace CsvConvertExample
 {
-    public class OrderByAddress : CsvConvertExample.Interfaces.IOrderByAddress<System.Object>
+    public class AddressOrder : Interfaces.IOrderByAddress<Object>
     {
-        #region IOrderByAddress<object> Members
+        #region Implementation of IOrderByAddress<object>
 
-        public List<object> OrderByName()
-        {
-            throw new NotImplementedException();
+        public List<object> OrderByAddress(List<object> list) {
+            return null;
         }
 
         #endregion

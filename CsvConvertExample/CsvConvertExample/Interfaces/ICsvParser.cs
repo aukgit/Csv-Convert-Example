@@ -3,6 +3,6 @@
 namespace CsvConvertExample.Interfaces {
     public interface IProcessCsv<T> : IProcess<T>
     {
-       List<T> ProcessCsv();
+        void ProcessCsv(List<T> list);
     }
 }

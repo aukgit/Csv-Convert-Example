@@ -2,8 +2,8 @@
 
 namespace CsvConvertExample.Interfaces
 {
-    public interface IProcessByAddress<T> : IProcess<T>
+    public interface IOrderByAddress<T> : IProcess<T>
     {
-        List<T> ProcessByAddress();
+        List<T> OrderByAddress(List<T> list);
     }
 }

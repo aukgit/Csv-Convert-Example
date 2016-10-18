@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using CsvConvertExample.Interfaces;
 
 namespace CsvConvertExample.Implementations {
-    public class CsvProcessor<T> : IFileWriter<T>, ICsvReader<T>, IProcessCsv<T>, IProcessByAddress<T>, IProcessByName<T>
+    public class CsvProcessor<T> : 
+        IFileWriter<T>, 
+        ICsvReader<T>, 
+        IProcessCsv<T>, 
+        IOrderByAddress<T>, 
+        IOrderByName<T>
     {
         #region IFileWriter Members
 
@@ -15,7 +20,7 @@ namespace CsvConvertExample.Implementations {
 
         #region ICsvReader Members
 
-        public List<T> ReadCsv() {
+        public List<T> ReadCsv(string filePath) {
             throw new NotImplementedException();
         }
 
@@ -23,25 +28,25 @@ namespace CsvConvertExample.Implementations {
 
         #region IProcessCsv Members
 
-        public List<T> ProcessCsv()
+        public void ProcessCsv(List<T> list)
         {
             throw new NotImplementedException();
         }
 
         #endregion
 
-        #region IProcessByAddress<T> Members
+        #region IOrderByAddress<T> Members
 
-        public List<T> ProcessByAddress()
+        public List<T> OrderByName()
         {
             throw new NotImplementedException();
         }
 
         #endregion
 
-        #region IProcessByName<T> Members
+        #region IOrderByName<T> Members
 
-        public List<T> ProcessByname()
+        public List<T> OrderByName()
         {
             throw new NotImplementedException();
         }

@@ -3,7 +3,7 @@
   <Class Name="CsvConvertExample.Implementations.CsvProcessor&lt;T&gt;" BaseTypeListCollapsed="true">
     <Position X="10.25" Y="1.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAACAAAAAEAAAAAAAQAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAQAAE=</HashCode>
       <FileName>Implementations\CsvProcessor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -14,6 +14,22 @@
       <HashCode>AAAAAEAAAAAAAAAAAAAAQAAAAAAAAAACAAAAAAAAAAg=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="CsvConvertExample.OrderByName">
+    <Position X="10.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrderByName.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CsvConvertExample.OrderByAddress">
+    <Position X="10.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrderByAddress.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="CsvConvertExample.Interfaces.ICsvReader&lt;T&gt;">
     <Position X="2.75" Y="4.5" Width="1.75" />
@@ -36,18 +52,11 @@
       <FileName>Interfaces\IFileWriter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.IProcessByName&lt;T&gt;">
+  <Interface Name="CsvConvertExample.Interfaces.IOrderByName&lt;T&gt;">
     <Position X="2.75" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IProcessByName.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.IProcessByAddress&lt;T&gt;">
-    <Position X="5.5" Y="3" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IProcessByAddress.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CsvConvertExample.Interfaces.IProcess&lt;T&gt;">
@@ -55,6 +64,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IProcess.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CsvConvertExample.Interfaces.IOrderByAddress&lt;T&gt;">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IProcessByAddress.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

@@ -3,7 +3,7 @@
   <Class Name="CsvConvertExample.Implementations.CsvProcessor&lt;T&gt;" BaseTypeListCollapsed="true">
     <Position X="10.25" Y="1.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAQAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAACAAAAAEAAAAAAAQAAE=</HashCode>
       <FileName>Implementations\CsvProcessor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -22,10 +22,10 @@
       <FileName>Interfaces\ICsvReader.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.ICsvParser&lt;T&gt;">
+  <Interface Name="CsvConvertExample.Interfaces.IProcessCsv&lt;T&gt;">
     <Position X="2.75" Y="6" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Interfaces\ICsvParser.cs</FileName>
     </TypeIdentifier>
   </Interface>

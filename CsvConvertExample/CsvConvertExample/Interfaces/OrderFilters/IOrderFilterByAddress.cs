@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace CsvConvertExample.Interfaces
+namespace CsvConvertExample.Interfaces.OrderFilters
 {
     public interface IOrderFilterByAddress<T, T2> : IOrderFilter<T, T2>
         where T : class, new()

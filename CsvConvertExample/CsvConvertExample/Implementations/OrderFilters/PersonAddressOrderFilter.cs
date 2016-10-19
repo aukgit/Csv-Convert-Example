@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using CsvConvertExample.DataLayer;
 using CsvConvertExample.Interfaces;
+using CsvConvertExample.Interfaces.OrderFilters;
 
 #endregion
 
-namespace CsvConvertExample.Implementations
+namespace CsvConvertExample.Implementations.OrderFilters
 {
     public class PersonAddressOrderFilter : IOrderFilterByAddress<Person, Person>
     {

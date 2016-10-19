@@ -9,6 +9,6 @@ namespace CsvConvertExample.Interfaces
     public interface IFileWriter<T> : IProcess<T>
         where T : class, new()
     {
-        bool Write(List<T> list, string filepath);
+        bool Write(string filepath, string content);
     }
 }

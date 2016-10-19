@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using CsvConvertExample.Interfaces;
+using CsvConvertExample.Interfaces.OrderFilters;
 using Ninject;
 
 #endregion

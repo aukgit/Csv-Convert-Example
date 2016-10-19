@@ -55,14 +55,16 @@
     <Compile Include="Interfaces\ICsvReader.cs" />
     <Compile Include="Interfaces\IFileWriter.cs" />
     <Compile Include="Interfaces\ICsvWriter.cs" />
-    <Compile Include="Interfaces\IOrderFilterByAddress.cs" />
-    <Compile Include="Interfaces\IOrderByNameFilter.cs" />
-    <Compile Include="Interfaces\IOrderFilter.cs" />
+    <Compile Include="Interfaces\OrderFilters\IOrderFilterByAddress.cs" />
+    <Compile Include="Interfaces\OrderFilters\IOrderByNameFilter.cs" />
+    <Compile Include="Interfaces\OrderFilters\IOrderFilter.cs" />
+    <Compile Include="Interfaces\Formatter\IPersonNameFrequencyFormatterForCsv.cs" />
     <Compile Include="Interfaces\IProcess.cs" />
-    <Compile Include="Implementations\PersonAddressOrderFilter.cs" />
+    <Compile Include="Implementations\OrderFilters\PersonAddressOrderFilter.cs" />
     <Compile Include="DataLayer\Person.cs" />
-    <Compile Include="Implementations\PersonNameFrequencyFilter.cs" />
-    <Compile Include="Implementations\PersonNameFrequencyCsvWriter.cs" />
+    <Compile Include="Implementations\OrderFilters\PersonNameFrequencyFilter.cs" />
+    <Compile Include="Implementations\Writers\PersonNameFrequencyWriter.cs" />
+    <Compile Include="Interfaces\Formatter\IStringFormatter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

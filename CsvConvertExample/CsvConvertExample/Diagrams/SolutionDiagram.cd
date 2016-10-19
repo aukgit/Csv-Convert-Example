@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="CsvConvertExample.Implementations.PersonNameFrequencyFilter" BaseTypeListCollapsed="true">
+  <Class Name="CsvConvertExample.Implementations.OrderFilters.PersonNameFrequencyFilter" BaseTypeListCollapsed="true">
     <Position X="28.5" Y="6.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Implementations\PersonNameFrequencyFilter.cs</FileName>
+      <FileName>Implementations\OrderFilters\PersonNameFrequencyFilter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="CsvConvertExample.Implementations.PersonAddressOrderFilter" BaseTypeListCollapsed="true">
+  <Class Name="CsvConvertExample.Implementations.OrderFilters.PersonAddressOrderFilter" BaseTypeListCollapsed="true">
     <Position X="24.75" Y="4.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Implementations\PersonAddressOrderFilter.cs</FileName>
+      <FileName>Implementations\OrderFilters\PersonAddressOrderFilter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -55,11 +55,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="CsvConvertExample.Implementations.PersonNameFrequencyCsvWriter">
+  <Class Name="CsvConvertExample.Implementations.Writers.PersonNameFrequencyWriter">
     <Position X="24.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
-      <FileName>Implementations\PersonNameFrequencyCsvWriter.cs</FileName>
+      <FileName>Implementations\Writers\PersonNameFrequencyWriter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -84,25 +84,25 @@
       <FileName>Interfaces\IFileWriter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.IOrderFilterByName&lt;T, T2&gt;">
+  <Interface Name="CsvConvertExample.Interfaces.OrderFilters.IOrderFilterByName&lt;T, T2&gt;">
     <Position X="9.25" Y="4.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IOrderByNameFilter.cs</FileName>
+      <FileName>Interfaces\OrderFilters\IOrderByNameFilter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.IOrderFilter&lt;T, T2&gt;">
+  <Interface Name="CsvConvertExample.Interfaces.OrderFilters.IOrderFilter&lt;T, T2&gt;">
     <Position X="7.75" Y="2.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IOrderFilter.cs</FileName>
+      <FileName>Interfaces\OrderFilters\IOrderFilter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.IOrderFilterByAddress&lt;T, T2&gt;">
+  <Interface Name="CsvConvertExample.Interfaces.OrderFilters.IOrderFilterByAddress&lt;T, T2&gt;">
     <Position X="5.25" Y="4.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IOrderFilterByAddress.cs</FileName>
+      <FileName>Interfaces\OrderFilters\IOrderFilterByAddress.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CsvConvertExample.Interfaces.IProcess&lt;T&gt;">

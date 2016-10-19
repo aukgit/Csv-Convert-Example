@@ -52,9 +52,10 @@
     <Compile Include="DataLayer\Interfaces\IAddressProperty.cs" />
     <Compile Include="Implementations\CsvProcessor.cs" />
     <Compile Include="DataLayer\Interfaces\INameProperty.cs" />
+    <Compile Include="Implementations\Formatters\PersonStreetAddressFormatterForCsv.cs" />
+    <Compile Include="Interfaces\Formatter\IPersonStreetAddressFormatterForCsv.cs" />
     <Compile Include="Interfaces\ICsvReader.cs" />
     <Compile Include="Interfaces\IFileWriter.cs" />
-    <Compile Include="Interfaces\ICsvWriter.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderFilterByAddress.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderByNameFilter.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderFilter.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="Implementations\OrderFilters\PersonAddressOrderFilter.cs" />
     <Compile Include="DataLayer\Person.cs" />
     <Compile Include="Implementations\OrderFilters\PersonNameFrequencyFilter.cs" />
-    <Compile Include="Implementations\Writers\PersonNameFrequencyWriter.cs" />
+    <Compile Include="Implementations\Formatters\PersonNameFrequencyFormatterForCsv.cs" />
     <Compile Include="Interfaces\Formatter\IStringFormatter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

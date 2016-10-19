@@ -55,14 +55,6 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="CsvConvertExample.Implementations.Writers.PersonNameFrequencyWriter">
-    <Position X="24.75" Y="8.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
-      <FileName>Implementations\Writers\PersonNameFrequencyWriter.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Interface Name="CsvConvertExample.Interfaces.ICsvReader&lt;T&gt;">
     <Position X="2" Y="2.5" Width="2.5" />
     <TypeIdentifier>
@@ -70,14 +62,7 @@
       <FileName>Interfaces\ICsvReader.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.ICsvWriter&lt;T&gt;">
-    <Position X="13" Y="2.5" Width="6" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\ICsvWriter.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.IFileWriter&lt;T&gt;">
+  <Interface Name="CsvConvertExample.Interfaces.IFileWriter">
     <Position X="19.75" Y="2.5" Width="4.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>

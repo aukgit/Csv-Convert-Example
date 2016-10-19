@@ -1,7 +1,9 @@
 ﻿#region using block
 
+using System;
 using System.Collections.Generic;
 using CsvConvertExample.Interfaces;
+using CsvConvertExample.Interfaces.Formatter;
 using CsvConvertExample.Interfaces.OrderFilters;
 using Ninject;
 
@@ -10,7 +12,7 @@ using Ninject;
 namespace CsvConvertExample.Implementations
 {
     public class CsvProcessor<T, T2> :
-        ICsvWriter<T>, ICsvReader<T>, IOrderFilterByAddress<T, T2>, IOrderFilterByName<T, T2>
+        ICsvReader<T>, IOrderFilterByAddress<T, T2>, IOrderFilterByName<T, T2>
         where T : class, new()
         where T2 : class, new()
     {
@@ -22,6 +24,9 @@ namespace CsvConvertExample.Implementations
 
         [Inject]
         public IOrderFilterByName<T, T2> AddressOrderFilter { get; set; }
+
+        [Inject]
+        public IFileWriter FileWriter { get; set; }
 
         #region ICsvReader Members
 
@@ -52,9 +57,14 @@ namespace CsvConvertExample.Implementations
 
         #region Implementation of ICsvWriter<T>
 
-        public bool WriteAsCsvFile<TType>(IFileWriter<TType> writer, List<TType> list, string[] propertise, string filepath) where TType : class, new()
+        public bool WriteAsCsvFile<TType>(List<TType> list, IStringFormatter<TType> formatter, string filePath) where TType : class, new()
         {
-            return false;
+            var result = FileWriter.Write(filePath, formatter.GetFormattedStringFor(list));
+            if (result)
+            {
+                Console.WriteLine("\"" + filePath + "\" file has been written successfully.");
+            }
+            return result;
         }
 
         #endregion

@@ -22,15 +22,22 @@ namespace CsvConvertExample.Implementations.FileIO
         public List<Person> ReadCsv(string filePath)
         {
             List<Person> people;
-            try
+
+            if (!File.Exists(filePath))
             {
-                lock (SyncRoot)
+                throw new FileNotFoundException(filePath);
+            }
+
+            lock (SyncRoot)
+            {
+                try
                 {
                     using (var mutex = new Mutex(true, "CSV-Processor"))
                     {
                         const int bufferSize = 1024;
                         mutex.WaitOne();
                         using (var fileStream = File.OpenRead(filePath))
+                        {
                             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, bufferSize))
                             {
                                 int index = 0;
@@ -56,16 +63,16 @@ namespace CsvConvertExample.Implementations.FileIO
                                     index++;
                                 }
                             }
-
+                        }
                         mutex.ReleaseMutex();
                     }
                 }
-            } catch (Exception ex)
-            {
-                // TODO : handle the error.
-                // TODO : A logger should log the exception.
-                throw; // re-throwing the error
-                return null;
+                catch (Exception ex)
+                {
+                    // TODO : handle the error.
+                    // TODO : A logger should log the exception.
+                    throw ex; // re-throwing the error
+                }
             }
 
             return people;

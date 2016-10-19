@@ -45,7 +45,7 @@
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>DataLayer\NameProperty.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.DataLayer.AddressProperty" BaseTypeListCollapsed="true">
     <Position X="25" Y="1" Width="1.5" />
@@ -55,11 +55,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="CsvConvertExample.Implementations.PersonNameFrequencyWriteAsCsv">
+  <Class Name="CsvConvertExample.Implementations.PersonNameFrequencyCsvWriter">
     <Position X="24.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
-      <FileName>Implementations\PersonNameFrequencyWriteAsCsv.cs</FileName>
+      <FileName>Implementations\PersonNameFrequencyCsvWriter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -70,7 +70,7 @@
       <FileName>Interfaces\ICsvReader.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.ICsvWriter">
+  <Interface Name="CsvConvertExample.Interfaces.ICsvWriter&lt;T&gt;">
     <Position X="13" Y="2.5" Width="6" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
@@ -119,11 +119,12 @@
       <FileName>DataLayer\Interfaces\INameProperty.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.DataLayer.Interfaces.IAddressProperty">
+  <Interface Name="CsvConvertExample.DataLayer.Interfaces.IEntity">
     <Position X="19.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>
-      <FileName>DataLayer\Interfaces\IAddressProperty.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataLayer\Interfaces\IEntity.cs</FileName>
+      <NewMemberFileName>DataLayer\Interfaces\IAddressProperty.cs</NewMemberFileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

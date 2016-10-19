@@ -7,6 +7,7 @@ using System.Collections.Generic;
 namespace CsvConvertExample.Interfaces
 {
     public interface ICsvReader<T> : IProcess<T>
+        where T : class, new()
     {
         List<T> ReadCsv(string filePath);
     }

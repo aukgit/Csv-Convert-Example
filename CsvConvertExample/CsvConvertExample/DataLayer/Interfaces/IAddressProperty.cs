@@ -1,6 +1,6 @@
 ﻿namespace CsvConvertExample.DataLayer.Interfaces
 {
-    public interface IAddressProperty
+    public interface IAddressProperty : IEntity
     {
         string Address { get; set; }
 

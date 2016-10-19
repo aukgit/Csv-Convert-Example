@@ -23,7 +23,7 @@ namespace CsvConvertExample.Implementations.FileIO
         {
             try
             {
-                using (var mutex = new Mutex(false, "CSV-Processor" + filepath))
+                using (var mutex = new Mutex(false, "CSV-Processor-" + filepath))
                 {
                     mutex.WaitOne();
                     File.WriteAllText(filepath, content);
@@ -33,7 +33,8 @@ namespace CsvConvertExample.Implementations.FileIO
             catch (Exception ex)
             {
                 // TODO : handle the error.
-                throw;
+                // TODO : A logger shoul;
+                throw; // re-throwing the error
                 return false;
             }
 

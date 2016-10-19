@@ -14,7 +14,7 @@ namespace CsvConvertExample.Implementations
     /// </summary>
     public class PersonNameFrequencyFilter : IOrderFilterByName<Person, PeopleOrderByNameFrequency>
     {
-        #region Implementation of IOrderFilterByName<Person,PeopleOrderByNameFrequency>
+        #region Implementation of IOrderFilterByName<Person, PeopleOrderByNameFrequency>
 
         /// <summary>
         /// Get people ordered by frequency and then alphabetically. 

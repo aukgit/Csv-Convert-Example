@@ -9,22 +9,18 @@ using CsvConvertExample.Interfaces;
 
 namespace CsvConvertExample.Implementations
 {
-    public class PersonAddressOrderFilter : IOrderByAddress<Person>
+    public class PersonAddressOrderFilter : IOrderFilterByAddress<Person, Person>
     {
         #region Implementation of IOrderByAddress<object>
 
-        public List<Person> OrderByAddress(List<Person> people)
+        /// <summary>
+        /// Sort people list by street names alphabetically.
+        /// </summary>
+        /// <param name="people">A list of person</param>
+        /// <returns>Returns a sorted person list alphabetically.</returns>
+        public List<Person> OrderFilterByAddress(List<Person> people)
         {
-            var result = people.GroupBy(person => new NameProperty()
-            {
-                FirstName = person.FirstName,
-                LastName = person.LastName
-            }).Select(group => new PeopleOrderByNameFrequency()
-            {
-                People = group,
-                Count = group.Count()
-            }).ToList();
-            return null;
+            return people.OrderBy(person => person.StreetAddress).ToList();
         }
 
         #endregion

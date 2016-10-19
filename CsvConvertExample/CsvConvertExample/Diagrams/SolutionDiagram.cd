@@ -1,70 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="CsvConvertExample.DataLayer.AddressProperty">
-    <Position X="10.25" Y="4.75" Width="1.5" />
+  <Class Name="CsvConvertExample.Implementations.PersonNameFrequencyFilter" BaseTypeListCollapsed="true">
+    <Position X="28.5" Y="6.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>
-      <FileName>DataLayer\AddressProperty.cs</FileName>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementations\PersonNameFrequencyFilter.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="CsvConvertExample.DataLayer.NameProperty">
-    <Position X="12" Y="4.75" Width="1.5" />
+  <Class Name="CsvConvertExample.Implementations.PersonAddressOrderFilter" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="4.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
-      <FileName>DataLayer\NameProperty.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementations\PersonAddressOrderFilter.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="CsvConvertExample.DataLayer.Person">
-    <Position X="10.25" Y="6.75" Width="1.5" />
+  <Class Name="CsvConvertExample.Implementations.CsvProcessor&lt;T, T2&gt;" BaseTypeListCollapsed="true">
+    <Position X="26.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAABAAAAAAAgQAAAAAgAAAAAQAAAQAAA=</HashCode>
+      <FileName>Implementations\CsvProcessor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CsvConvertExample.DataLayer.Person" BaseTypeListCollapsed="true">
+    <Position X="28.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAQAAAAAAAAAACAAAAAAAAABg=</HashCode>
       <FileName>DataLayer\Person.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="CsvConvertExample.Implementations.CsvProcessor&lt;T, T2&gt;" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="1.5" Width="1.75" />
+  <Class Name="CsvConvertExample.DataLayer.PeopleOrderByNameFrequency">
+    <Position X="24.75" Y="6" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAABAAAAAAAgQAAAAAAAEAAAQAAEQAAA=</HashCode>
-      <FileName>Implementations\CsvProcessor.cs</FileName>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataLayer\PeopleOrderByNameFrequency.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CsvConvertExample.DataLayer.NameProperty" BaseTypeListCollapsed="true">
+    <Position X="28.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>DataLayer\NameProperty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CsvConvertExample.DataLayer.AddressProperty" BaseTypeListCollapsed="true">
+    <Position X="25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>
+      <FileName>DataLayer\AddressProperty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Interface Name="CsvConvertExample.Interfaces.ICsvReader&lt;T&gt;">
-    <Position X="2.75" Y="4.5" Width="1.75" />
+    <Position X="2" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Interfaces\ICsvReader.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.IWriter&lt;T&gt;">
-    <Position X="5.5" Y="4.5" Width="2.25" />
+  <Interface Name="CsvConvertExample.Interfaces.ICsvWriter">
+    <Position X="13" Y="2.5" Width="6" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IWriter.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICsvWriter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CsvConvertExample.Interfaces.IFileWriter&lt;T&gt;">
+    <Position X="19.75" Y="2.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Interfaces\IFileWriter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CsvConvertExample.Interfaces.IOrderFilterByName&lt;T, T2&gt;">
+    <Position X="9.25" Y="4.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IOrderByNameFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CsvConvertExample.Interfaces.IOrderFilter&lt;T, T2&gt;">
+    <Position X="7.75" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IOrderFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CsvConvertExample.Interfaces.IOrderFilterByAddress&lt;T, T2&gt;">
+    <Position X="5.25" Y="4.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IOrderFilterByAddress.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CsvConvertExample.Interfaces.IProcess&lt;T&gt;">
-    <Position X="4.25" Y="1.5" Width="1.5" />
+    <Position X="12.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IProcess.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.IAddressProperty">
-    <Position X="2.75" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>
-      <FileName>IAddressProperty.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="CsvConvertExample.INameProperty">
-    <Position X="5.5" Y="6" Width="1.5" />
+    <Position X="21.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
-      <FileName>INameProperty.cs</FileName>
+      <FileName>DataLayer\Interfaces\INameProperty.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CsvConvertExample.IAddressProperty">
+    <Position X="19.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>
+      <FileName>DataLayer\Interfaces\IAddressProperty.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

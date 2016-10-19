@@ -48,11 +48,12 @@
     <Compile Include="DataLayer\AddressProperty.cs" />
     <Compile Include="DataLayer\PeopleOrderByNameFrequency.cs" />
     <Compile Include="DataLayer\NameProperty.cs" />
-    <Compile Include="IAddressProperty.cs" />
+    <Compile Include="DataLayer\Interfaces\IAddressProperty.cs" />
     <Compile Include="Implementations\CsvProcessor.cs" />
-    <Compile Include="INameProperty.cs" />
+    <Compile Include="DataLayer\Interfaces\INameProperty.cs" />
     <Compile Include="Interfaces\ICsvReader.cs" />
-    <Compile Include="Interfaces\IWriter.cs" />
+    <Compile Include="Interfaces\IFileWriter.cs" />
+    <Compile Include="Interfaces\ICsvWriter.cs" />
     <Compile Include="Interfaces\IOrderFilterByAddress.cs" />
     <Compile Include="Interfaces\IOrderByNameFilter.cs" />
     <Compile Include="Interfaces\IOrderFilter.cs" />
@@ -69,9 +70,7 @@
     <None Include="Diagrams\SolutionDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataLayer\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

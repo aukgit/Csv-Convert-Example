@@ -6,8 +6,8 @@ using System.Collections.Generic;
 
 namespace CsvConvertExample.Interfaces
 {
-    public interface IWriter<T> : IProcess<T>
+    public interface IFileWriter<T> : IProcess<T>
     {
-        bool WriteToFile<T2>(List<T2> list);
+        bool Write(List<T> list, string[] propertise, string filepath);
     }
 }

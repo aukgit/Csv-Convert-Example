@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region using block
+
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#endregion
 
 namespace CsvConvertExample.DataLayer
 {

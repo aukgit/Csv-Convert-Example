@@ -1,6 +1,6 @@
 ﻿#region using block
 
-using System;
+using CsvConvertExample.DataLayer.Interfaces;
 
 #endregion
 
@@ -11,13 +11,11 @@ namespace CsvConvertExample.DataLayer
         #region Constructors
 
         public Person()
-        {
-        }
+        {}
 
         public Person(INameProperty nameProperty)
             : this(nameProperty, null)
-        {
-        }
+        {}
 
         public Person(INameProperty nameProperty, IAddressProperty addressProperty)
         {
@@ -32,7 +30,8 @@ namespace CsvConvertExample.DataLayer
                 Address = addressProperty.Address;
                 StreetAddress = addressProperty.StreetAddress;
             }
-        } 
+        }
+
         #endregion
 
         public long PhoneNumber { get; set; }
@@ -42,6 +41,7 @@ namespace CsvConvertExample.DataLayer
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
         #endregion
 
         #region IAddressProperty Members

@@ -1,4 +1,10 @@
-﻿namespace CsvConvertExample.DataLayer
+﻿#region using block
+
+using CsvConvertExample.DataLayer.Interfaces;
+
+#endregion
+
+namespace CsvConvertExample.DataLayer
 {
     public class AddressProperty : IAddressProperty
     {

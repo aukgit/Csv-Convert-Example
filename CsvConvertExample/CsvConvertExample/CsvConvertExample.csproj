@@ -61,6 +61,7 @@
     <Compile Include="Implementations\PersonAddressOrderFilter.cs" />
     <Compile Include="DataLayer\Person.cs" />
     <Compile Include="Implementations\PersonNameFrequencyFilter.cs" />
+    <Compile Include="Implementations\PersonNameFrequencyWriteAsCsv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,9 +9,8 @@ using Ninject;
 namespace CsvConvertExample.Implementations
 {
     public class CsvProcessor<T, T2> :
-        ICsvWriter , ICsvReader<T>, IOrderFilterByAddress<T, T2>, IOrderFilterByName<T, T2>
+        ICsvWriter, ICsvReader<T>, IOrderFilterByAddress<T, T2>, IOrderFilterByName<T, T2>
     {
-        
         [Inject]
         public ICsvReader<T> CsvReader { get; set; }
 
@@ -21,7 +20,6 @@ namespace CsvConvertExample.Implementations
         [Inject]
         public IOrderFilterByName<T, T2> AddressOrderFilter { get; set; }
 
-
         #region ICsvReader Members
 
         public List<T> ReadCsv(string filePath)
@@ -30,7 +28,6 @@ namespace CsvConvertExample.Implementations
         }
 
         #endregion
-
 
         #region Implementation of IOrderFilterByAddress<T,T2>
 

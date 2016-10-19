@@ -55,6 +55,14 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
+  <Class Name="CsvConvertExample.Implementations.PersonNameFrequencyWriteAsCsv">
+    <Position X="24.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Implementations\PersonNameFrequencyWriteAsCsv.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="CsvConvertExample.Interfaces.ICsvReader&lt;T&gt;">
     <Position X="2" Y="2.5" Width="2.5" />
     <TypeIdentifier>
@@ -104,14 +112,14 @@
       <FileName>Interfaces\IProcess.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.INameProperty">
+  <Interface Name="CsvConvertExample.DataLayer.Interfaces.INameProperty">
     <Position X="21.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>DataLayer\Interfaces\INameProperty.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.IAddressProperty">
+  <Interface Name="CsvConvertExample.DataLayer.Interfaces.IAddressProperty">
     <Position X="19.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>

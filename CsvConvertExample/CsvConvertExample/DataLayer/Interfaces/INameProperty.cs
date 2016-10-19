@@ -1,4 +1,4 @@
-﻿namespace CsvConvertExample
+﻿namespace CsvConvertExample.DataLayer.Interfaces
 {
     public interface INameProperty
     {

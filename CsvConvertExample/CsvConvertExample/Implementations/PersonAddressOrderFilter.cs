@@ -14,7 +14,7 @@ namespace CsvConvertExample.Implementations
         #region Implementation of IOrderByAddress<object>
 
         /// <summary>
-        /// Sort people list by street names alphabetically.
+        ///     Sort people list by street names alphabetically.
         /// </summary>
         /// <param name="people">A list of person</param>
         /// <returns>Returns a sorted person list alphabetically.</returns>

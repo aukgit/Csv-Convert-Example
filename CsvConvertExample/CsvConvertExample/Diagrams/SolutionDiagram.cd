@@ -19,7 +19,7 @@
   <Class Name="CsvConvertExample.Implementations.CsvProcessor&lt;T, T2&gt;" BaseTypeListCollapsed="true">
     <Position X="26.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAABAAAAAAAgQAAAAAgAAAAAQAAAQAAA=</HashCode>
+      <HashCode>AAEAAAAAAACAAABAAAAAAAgQAAAAAgAAAAAQAAAQAAA=</HashCode>
       <FileName>Implementations\CsvProcessor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -55,18 +55,18 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Interface Name="CsvConvertExample.Interfaces.ICsvReader&lt;T&gt;">
+  <Interface Name="CsvConvertExample.Interfaces.FileIO.ICsvReader&lt;T&gt;">
     <Position X="2" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
-      <FileName>Interfaces\ICsvReader.cs</FileName>
+      <FileName>Interfaces\FileIO\ICsvReader.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CsvConvertExample.Interfaces.IFileWriter">
+  <Interface Name="CsvConvertExample.Interfaces.FileIO.IFileWriter">
     <Position X="19.75" Y="2.5" Width="4.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
-      <FileName>Interfaces\IFileWriter.cs</FileName>
+      <FileName>Interfaces\FileIO\IFileWriter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CsvConvertExample.Interfaces.OrderFilters.IOrderFilterByName&lt;T, T2&gt;">

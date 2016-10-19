@@ -2,7 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using CsvConvertExample.Interfaces;
+using CsvConvertExample.Interfaces.FileIO;
 using CsvConvertExample.Interfaces.Formatter;
 using CsvConvertExample.Interfaces.OrderFilters;
 using Ninject;
@@ -64,6 +64,7 @@ namespace CsvConvertExample.Implementations
             {
                 Console.WriteLine("\"" + filePath + "\" file has been written successfully.");
             }
+
             return result;
         }
 

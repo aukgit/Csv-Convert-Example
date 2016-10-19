@@ -52,10 +52,11 @@
     <Compile Include="DataLayer\Interfaces\IAddressProperty.cs" />
     <Compile Include="Implementations\CsvProcessor.cs" />
     <Compile Include="DataLayer\Interfaces\INameProperty.cs" />
+    <Compile Include="Implementations\FileIO\CsvFileWriter.cs" />
     <Compile Include="Implementations\Formatters\PersonStreetAddressFormatterForCsv.cs" />
     <Compile Include="Interfaces\Formatter\IPersonStreetAddressFormatterForCsv.cs" />
-    <Compile Include="Interfaces\ICsvReader.cs" />
-    <Compile Include="Interfaces\IFileWriter.cs" />
+    <Compile Include="Interfaces\FileIO\ICsvReader.cs" />
+    <Compile Include="Interfaces\FileIO\IFileWriter.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderFilterByAddress.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderByNameFilter.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderFilter.cs" />

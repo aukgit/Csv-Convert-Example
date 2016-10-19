@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿#region using block
+
+using System.Collections.Generic;
+
+#endregion
 
 namespace CsvConvertExample.Interfaces.Formatter
 {

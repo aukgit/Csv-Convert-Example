@@ -1,10 +1,4 @@
-﻿#region using block
-
-using System.Collections.Generic;
-
-#endregion
-
-namespace CsvConvertExample.Interfaces
+﻿namespace CsvConvertExample.Interfaces.FileIO
 {
     public interface IFileWriter
     {

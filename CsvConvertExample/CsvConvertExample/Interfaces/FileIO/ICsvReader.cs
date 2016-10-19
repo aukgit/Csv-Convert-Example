@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace CsvConvertExample.Interfaces
+namespace CsvConvertExample.Interfaces.FileIO
 {
     public interface ICsvReader<T> : IProcess<T>
         where T : class, new()

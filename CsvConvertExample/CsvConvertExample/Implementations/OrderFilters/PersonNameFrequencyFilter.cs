@@ -3,7 +3,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using CsvConvertExample.DataLayer;
-using CsvConvertExample.Interfaces;
 using CsvConvertExample.Interfaces.OrderFilters;
 
 #endregion
@@ -26,19 +25,19 @@ namespace CsvConvertExample.Implementations.OrderFilters
         public List<PeopleOrderByNameFrequency> OrderFilterByName(List<Person> people)
         {
             var result = people.GroupBy(person => new NameProperty
-                                                    {
-                                                        FirstName = person.FirstName,
-                                                        LastName = person.LastName
-                                                    })
-                                .Select(group => new PeopleOrderByNameFrequency
-                                {
-                                    People = group,
-                                    Count = group.Count()
-                                })
-                                .OrderByDescending(group => group.Count)
-                                .ThenBy(group => group.People.Key.FirstName)
-                                .ThenBy(group => group.People.Key.LastName)
-                                .ToList();
+            {
+                FirstName = person.FirstName,
+                LastName = person.LastName
+            })
+                               .Select(group => new PeopleOrderByNameFrequency
+                               {
+                                   People = group,
+                                   Count = group.Count()
+                               })
+                               .OrderByDescending(group => group.Count)
+                               .ThenBy(group => group.People.Key.FirstName)
+                               .ThenBy(group => group.People.Key.LastName)
+                               .ToList();
 
             return result;
         }

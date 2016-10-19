@@ -6,7 +6,6 @@ using CsvConvertExample.DataLayer;
 using CsvConvertExample.Interfaces.FileIO;
 using CsvConvertExample.Interfaces.Formatter;
 using CsvConvertExample.Interfaces.OrderFilters;
-using Ninject;
 
 #endregion
 
@@ -14,17 +13,18 @@ namespace CsvConvertExample.Implementations
 {
     public class CsvProcessor
     {
-        [Inject]
-        public ICsvReader<Person> CsvReader { get; set; }
+        public CsvProcessor(ICsvReader<Person> csvReader, IOrderFilterByName<Person, PeopleOrderByNameFrequency> nameFrequencyFilter, IOrderFilterByAddress<Person, Person> addressOrderFilter, IFileWriter fileWriter)
+        {
+            CsvReader = csvReader;
+            NameFrequencyFilter = nameFrequencyFilter;
+            AddressOrderFilter = addressOrderFilter;
+            FileWriter = fileWriter;
+        }
 
-        [Inject]
-        public IOrderFilterByName<Person, PeopleOrderByNameFrequency> NameFrequencyFilter { get; set; }
-
-        [Inject]
-        public IOrderFilterByAddress<Person, Person> AddressOrderFilter { get; set; }
-
-        [Inject]
-        public IFileWriter FileWriter { get; set; }
+        public ICsvReader<Person> CsvReader { get; private set; }
+        public IOrderFilterByName<Person, PeopleOrderByNameFrequency> NameFrequencyFilter { get; private set; }
+        public IOrderFilterByAddress<Person, Person> AddressOrderFilter { get; private set; }
+        public IFileWriter FileWriter { get; private set; }
 
         #region ICsvReader Members
 

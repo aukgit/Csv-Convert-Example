@@ -8,14 +8,18 @@ using System.Threading;
 using CsvConvertExample.DataLayer;
 using CsvConvertExample.Interfaces.FileIO;
 using CsvConvertExample.Interfaces.Formatter;
+using Ninject;
 
 #endregion
 
 namespace CsvConvertExample.Implementations.FileIO
 {
-    public class CsvReaderForPeople : ICsvReader<Person>, IStreetAddressExtractor
+    public class CsvReaderForPeople : ICsvReader<Person>
     {
         private static readonly object SyncRoot = new object();
+
+        [Inject]
+        public IStreetAddressExtractor StreetAddressExtractor { get; set; }
 
         #region Implementation of ICsvReader<Person>
 
@@ -43,6 +47,9 @@ namespace CsvConvertExample.Implementations.FileIO
                                 int index = 0;
                                 string line;
                                 people = new List<Person>(80000);
+
+                                // TODO : We could have read the properties from reflection
+                                //        however would be an overkill for now.
                                 while ((line = streamReader.ReadLine()) != null)
                                 {
                                     // Process line
@@ -56,7 +63,7 @@ namespace CsvConvertExample.Implementations.FileIO
                                             Address = fields[2],
                                             PhoneNumber = long.Parse(fields[3]) // we can keep it as string as well , because there is no processing.
                                         };
-                                        person.StreetAddress = ExtractStreetAddress(person.Address);
+                                        person.StreetAddress = StreetAddressExtractor.ExtractStreetAddress(person.Address);
                                         people.Add(person);
                                     }
 
@@ -64,6 +71,7 @@ namespace CsvConvertExample.Implementations.FileIO
                                 }
                             }
                         }
+
                         mutex.ReleaseMutex();
                     }
                 }
@@ -76,26 +84,6 @@ namespace CsvConvertExample.Implementations.FileIO
             }
 
             return people;
-        }
-
-        #endregion
-
-        #region Implementation of IStreetAddressExtractor
-
-        /// <summary>
-        ///     Get only street names from address.
-        /// </summary>
-        /// <param name="address">Given address format can be "\d{4} \w+[10]"</param>
-        /// <returns>Returns street address after number.</returns>
-        public string ExtractStreetAddress(string address)
-        {
-            if (address != null)
-            {
-                var spaceIndex = address.IndexOf(" ", StringComparison.Ordinal);
-                return address.Substring(spaceIndex + 1);
-            }
-
-            return string.Empty;
         }
 
         #endregion

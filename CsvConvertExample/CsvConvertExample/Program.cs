@@ -24,6 +24,7 @@ namespace CsvConvertExample
 
             container.Bind<IPersonNameFrequencyFormatterForCsv<PeopleOrderByNameFrequency>>().To<PersonNameFrequencyFormatterForCsv>();
             container.Bind<IPersonStreetAddressFormatterForCsv<Person>>().To<PersonStreetAddressFormatterForCsv>();
+            container.Bind<IStreetAddressExtractor>().To<StreetNameExtractor>();
 
             container.Bind<IOrderFilterByName<Person, PeopleOrderByNameFrequency>>().To<PersonNameFrequencyFilter>();
             container.Bind<IOrderFilterByAddress<Person, Person>>().To<PersonAddressOrderFilter>();

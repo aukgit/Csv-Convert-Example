@@ -1,6 +1,6 @@
 ﻿namespace CsvConvertExample.Interfaces.Formatter
 {
-    interface IStreetAddressExtractor
+    public interface IStreetAddressExtractor
     {
         /// <summary>
         ///     Get only street names from address.

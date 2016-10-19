@@ -23,14 +23,13 @@ namespace CsvConvertExample.Implementations.FileIO
         {
             try
             {
-                using (var mutex = new Mutex(false, "CSV-Processor-" + filepath))
+                using (var mutex = new Mutex(true, "CSV-Processor"))
                 {
                     mutex.WaitOne();
                     File.WriteAllText(filepath, content);
                     mutex.ReleaseMutex();
                 }
-            } 
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 // TODO : handle the error.
                 // TODO : A logger shoul;

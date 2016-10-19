@@ -16,13 +16,12 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="CsvConvertExample.Implementations.CsvProcessor&lt;T, T2&gt;" BaseTypeListCollapsed="true">
+  <Class Name="CsvConvertExample.Implementations.CsvProcessor" BaseTypeListCollapsed="true">
     <Position X="26.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAACAAABAAAAAAAgQAAAAAgAAAAAQAAAQAAA=</HashCode>
       <FileName>Implementations\CsvProcessor.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="CsvConvertExample.DataLayer.Person" BaseTypeListCollapsed="true">
     <Position X="28.5" Y="2.75" Width="1.5" />

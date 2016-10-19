@@ -58,6 +58,7 @@
     <Compile Include="Interfaces\Formatter\IPersonStreetAddressFormatterForCsv.cs" />
     <Compile Include="Interfaces\FileIO\ICsvReader.cs" />
     <Compile Include="Interfaces\FileIO\IFileWriter.cs" />
+    <Compile Include="Interfaces\Formatter\IStreetAddressExtractor.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderFilterByAddress.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderByNameFilter.cs" />
     <Compile Include="Interfaces\OrderFilters\IOrderFilter.cs" />
@@ -73,7 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Data\data.csv" />
+    <Content Include="Data\data.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\output\name-frequency.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Diagrams\SolutionDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>

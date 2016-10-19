@@ -1,17 +1,22 @@
-﻿using System;
+﻿#region using block
+
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using CsvConvertExample.DataLayer;
 using CsvConvertExample.Interfaces.FileIO;
+using CsvConvertExample.Interfaces.Formatter;
+
+#endregion
 
 namespace CsvConvertExample.Implementations.FileIO
 {
-    public class CsvReaderForPeople : ICsvReader<Person>
+    public class CsvReaderForPeople : ICsvReader<Person>, IStreetAddressExtractor
     {
+        private static readonly object SyncRoot = new object();
+
         #region Implementation of ICsvReader<Person>
 
         public List<Person> ReadCsv(string filePath)
@@ -19,41 +24,43 @@ namespace CsvConvertExample.Implementations.FileIO
             List<Person> people;
             try
             {
-                using (var mutex = new Mutex(false, "CSV-Processor-" + filePath))
+                lock (SyncRoot)
                 {
-                    const int bufferSize = 1024;
-                    mutex.WaitOne();
-                    using (var fileStream = File.OpenRead(filePath))
-                    using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, bufferSize))
+                    using (var mutex = new Mutex(true, "CSV-Processor"))
                     {
-                        int index = 0;
-                        string line;
-                        people = new List<Person>(80000);
-                        while ((line = streamReader.ReadLine()) != null)
-                        {
-                            // Process line
-                            if (index >= 1)
+                        const int bufferSize = 1024;
+                        mutex.WaitOne();
+                        using (var fileStream = File.OpenRead(filePath))
+                            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, bufferSize))
                             {
-                                var fields = line.Split(',');
-                                var person = new Person()
+                                int index = 0;
+                                string line;
+                                people = new List<Person>(80000);
+                                while ((line = streamReader.ReadLine()) != null)
                                 {
-                                    FirstName = fields[0],
-                                    LastName = fields[1],
-                                    Address = fields[2],
-                                    PhoneNumber = long.Parse(fields[3]), // we can keep it as string as well , because there is no processing.
-                                };
-                                person.StreetAddress = ExtractStreetAddressFromAddress(person.Address);
-                                people.Add(person);
+                                    // Process line
+                                    if (index >= 1)
+                                    {
+                                        var fields = line.Split(',');
+                                        var person = new Person
+                                        {
+                                            FirstName = fields[0],
+                                            LastName = fields[1],
+                                            Address = fields[2],
+                                            PhoneNumber = long.Parse(fields[3]) // we can keep it as string as well , because there is no processing.
+                                        };
+                                        person.StreetAddress = ExtractStreetAddress(person.Address);
+                                        people.Add(person);
+                                    }
+
+                                    index++;
+                                }
                             }
 
-                            index++;
-                        }
+                        mutex.ReleaseMutex();
                     }
-
-                    mutex.ReleaseMutex();
                 }
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 // TODO : handle the error.
                 // TODO : A logger should log the exception.
@@ -63,10 +70,17 @@ namespace CsvConvertExample.Implementations.FileIO
 
             return people;
         }
-      
+
         #endregion
 
-        private string ExtractStreetAddressFromAddress(string address)
+        #region Implementation of IStreetAddressExtractor
+
+        /// <summary>
+        ///     Get only street names from address.
+        /// </summary>
+        /// <param name="address">Given address format can be "\d{4} \w+[10]"</param>
+        /// <returns>Returns street address after number.</returns>
+        public string ExtractStreetAddress(string address)
         {
             if (address != null)
             {
@@ -76,5 +90,7 @@ namespace CsvConvertExample.Implementations.FileIO
 
             return string.Empty;
         }
+
+        #endregion
     }
 }

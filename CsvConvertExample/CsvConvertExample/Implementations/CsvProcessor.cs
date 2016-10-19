@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using CsvConvertExample.DataLayer;
 using CsvConvertExample.Interfaces.FileIO;
 using CsvConvertExample.Interfaces.Formatter;
 using CsvConvertExample.Interfaces.OrderFilters;
@@ -11,26 +12,23 @@ using Ninject;
 
 namespace CsvConvertExample.Implementations
 {
-    public class CsvProcessor<T, T2> :
-        ICsvReader<T>, IOrderFilterByAddress<T, T2>, IOrderFilterByName<T, T2>
-        where T : class, new()
-        where T2 : class, new()
+    public class CsvProcessor
     {
         [Inject]
-        public ICsvReader<T> CsvReader { get; set; }
+        public ICsvReader<Person> CsvReader { get; set; }
 
         [Inject]
-        public IOrderFilterByAddress<T, T2> NameFrequencyFilter { get; set; }
+        public IOrderFilterByName<Person, PeopleOrderByNameFrequency> NameFrequencyFilter { get; set; }
 
         [Inject]
-        public IOrderFilterByName<T, T2> AddressOrderFilter { get; set; }
+        public IOrderFilterByAddress<Person, Person> AddressOrderFilter { get; set; }
 
         [Inject]
         public IFileWriter FileWriter { get; set; }
 
         #region ICsvReader Members
 
-        public List<T> ReadCsv(string filePath)
+        public List<Person> ReadCsv(string filePath)
         {
             return CsvReader.ReadCsv(filePath);
         }
@@ -39,18 +37,18 @@ namespace CsvConvertExample.Implementations
 
         #region Implementation of IOrderFilterByAddress<T,T2>
 
-        public List<T2> OrderFilterByAddress(List<T> people)
+        public List<Person> OrderFilterByAddress(List<Person> people)
         {
-            return AddressOrderFilter.OrderFilterByName(people);
+            return AddressOrderFilter.OrderFilterByAddress(people);
         }
 
         #endregion
 
         #region Implementation of IOrderFilterByName<T,T2>
 
-        public List<T2> OrderFilterByName(List<T> people)
+        public List<PeopleOrderByNameFrequency> OrderFilterByName(List<Person> people)
         {
-            return NameFrequencyFilter.OrderFilterByAddress(people);
+            return NameFrequencyFilter.OrderFilterByName(people);
         }
 
         #endregion

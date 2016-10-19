@@ -19,13 +19,13 @@ namespace CsvConvertExample.Implementations.Formatters
             string spliter = ",";
             var sb = new StringBuilder((names.Count * 5) + 5);
 
-            // ToDo : use string.format
+            // TODO : use string.format
             sb.AppendLine("FirstName" + spliter + "LastName" + spliter + "Frequency");
             foreach (var name in names)
             {
                 foreach (var person in name.People)
                 {
-                    // ToDo : use string.format
+                    // TODO : use string.format
                     sb.AppendLine(person.FirstName + spliter + person.LastName + spliter + name.Count);
                 }
             }

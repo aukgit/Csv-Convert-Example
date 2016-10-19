@@ -29,9 +29,11 @@ namespace CsvConvertExample.Implementations.FileIO
                     File.WriteAllText(filepath, content);
                     mutex.ReleaseMutex();
                 }
-            } catch (Exception ex)
+            } 
+            catch (Exception ex)
             {
-                throw ex;
+                // TODO : handle the error.
+                throw;
                 return false;
             }
 

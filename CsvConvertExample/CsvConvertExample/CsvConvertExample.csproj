@@ -45,16 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayer\AddressProperty.cs" />
+    <Compile Include="DataLayer\NameFrequencyCounter.cs" />
+    <Compile Include="DataLayer\NameProperty.cs" />
+    <Compile Include="IAddressProperty.cs" />
     <Compile Include="Implementations\CsvProcessor.cs" />
+    <Compile Include="INameProperty.cs" />
     <Compile Include="Interfaces\ICsvReader.cs" />
     <Compile Include="Interfaces\IFileWriter.cs" />
     <Compile Include="Interfaces\IOrderFilter.cs" />
     <Compile Include="Interfaces\IProcess.cs" />
     <Compile Include="Interfaces\IOrderByAddress.cs" />
-    <Compile Include="Interfaces\IOrderByName.cs" />
+    <Compile Include="Interfaces\IOrderByNameFilter.cs" />
     <Compile Include="Implementations\PersonAddressOrderFilter.cs" />
     <Compile Include="DataLayer\Person.cs" />
-    <Compile Include="Implementations\PersonNameFrequency.cs" />
+    <Compile Include="Implementations\PersonNameFilterFrequencyFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,7 +69,9 @@
     <None Include="Diagrams\SolutionDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataLayer\Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

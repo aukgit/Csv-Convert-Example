@@ -1,6 +1,5 @@
 ﻿#region using block
 
-using System;
 using System.Collections.Generic;
 using CsvConvertExample.Interfaces;
 using Ninject;
@@ -9,17 +8,20 @@ using Ninject;
 
 namespace CsvConvertExample.Implementations
 {
-    public class CsvProcessor<T> : 
-        IFileWriter<T>, ICsvReader<T>, IOrderByAddress<T>, IOrderByName<T>
+    public class CsvProcessor<T, T2> :
+        IFileWriter<T>, ICsvReader<T>, IOrderFilterByAddress<T, T2>, IOrderFilterByName<T, T2>
     {
         [Inject]
         public IFileWriter<T> FileWriter { get; set; }
+
         [Inject]
         public ICsvReader<T> CsvReader { get; set; }
+
         [Inject]
-        public IOrderByName<T> NameFrequencyProcessor { get; set; }
+        public IOrderFilterByAddress<T, T2> NameFrequencyFilter { get; set; }
+
         [Inject]
-        public IOrderByAddress<T> AddressOrderFilter { get; set; }
+        public IOrderFilterByName<T, T2> AddressOrderFilter { get; set; }
 
         #region IFileWriter Members
 
@@ -40,20 +42,20 @@ namespace CsvConvertExample.Implementations
         #endregion
 
 
-        #region Implementation of IOrderByAddress<T>
+        #region Implementation of IOrderFilterByAddress<T,T2>
 
-        public List<T> OrderByAddress(List<T> list)
+        public List<T2> OrderFilterByAddress(List<T> people)
         {
-            return AddressOrderFilter.OrderByAddress(list);
+            return AddressOrderFilter.OrderFilterByName(people);
         }
 
         #endregion
 
-        #region Implementation of IOrderByName<T>
+        #region Implementation of IOrderFilterByName<T,T2>
 
-        public List<T> OrderByName(List<T> list)
+        public List<T2> OrderFilterByName(List<T> people)
         {
-            return NameFrequencyProcessor.OrderByName(list);
+            return NameFrequencyFilter.OrderFilterByAddress(people);
         }
 
         #endregion

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region using block
+
+using System;
 using CsvConvertExample.Interfaces.Formatter;
+
+#endregion
 
 namespace CsvConvertExample.Implementations.Formatters
 {

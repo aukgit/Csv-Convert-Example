@@ -49,7 +49,7 @@ namespace CsvConvertExample.Implementations.FileIO
                                 people = new List<Person>(80000);
 
                                 // TODO : We could have read the properties from reflection
-                                //        however would be an overkill for now.
+                                // however would be an overkill for now.
                                 while ((line = streamReader.ReadLine()) != null)
                                 {
                                     // Process line
@@ -74,8 +74,7 @@ namespace CsvConvertExample.Implementations.FileIO
 
                         mutex.ReleaseMutex();
                     }
-                }
-                catch (Exception ex)
+                } catch (Exception ex)
                 {
                     // TODO : handle the error.
                     // TODO : A logger should log the exception.

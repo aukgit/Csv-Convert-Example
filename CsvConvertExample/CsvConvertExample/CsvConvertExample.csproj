@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="DataLayer\AddressProperty.cs" />
     <Compile Include="DataLayer\Interfaces\IEntity.cs" />
+    <Compile Include="DataLayer\PeopleGroupCollector.cs" />
     <Compile Include="DataLayer\PeopleOrderByNameFrequency.cs" />
     <Compile Include="DataLayer\NameProperty.cs" />
     <Compile Include="DataLayer\Interfaces\IAddressProperty.cs" />

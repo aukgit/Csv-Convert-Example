@@ -8,16 +8,16 @@ namespace CsvConvertExample.DataLayer
 {
     public class Person : INameProperty, IAddressProperty
     {
+        public long PhoneNumber { get; set; }
+
         #region Constructors
 
         public Person()
-        {
-        }
+        {}
 
         public Person(INameProperty nameProperty)
             : this(nameProperty, null)
-        {
-        }
+        {}
 
         public Person(INameProperty nameProperty, IAddressProperty addressProperty)
         {
@@ -35,8 +35,6 @@ namespace CsvConvertExample.DataLayer
         }
 
         #endregion
-
-        public long PhoneNumber { get; set; }
 
         #region INameProperty Members
 

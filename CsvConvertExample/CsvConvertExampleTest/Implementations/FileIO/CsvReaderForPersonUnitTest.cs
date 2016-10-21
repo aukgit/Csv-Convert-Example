@@ -10,7 +10,7 @@ using Shouldly;
 
 namespace CsvConvertExampleUnitTest.Implementations.FileIO
 {
-    public class CsvReaderForPersonTest
+    public class CsvReaderForPersonUnitTest
     {
         private Mock<CsvReaderForPerson> _mockCsvReader;
         private CsvReaderForPerson _csvReaderForPerson;

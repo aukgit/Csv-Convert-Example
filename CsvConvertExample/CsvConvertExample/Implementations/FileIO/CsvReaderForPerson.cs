@@ -18,7 +18,11 @@ namespace CsvConvertExample.Implementations.FileIO
     {
         private static readonly object SyncRoot = new object();
 
-        [Inject]
+        public CsvReaderForPerson(IStreetAddressExtractor streetAddressExtractor)
+        {
+            StreetAddressExtractor = streetAddressExtractor;
+        }
+
         public IStreetAddressExtractor StreetAddressExtractor { get; set; }
 
         #region Implementation of ICsvReader<Person>
@@ -56,6 +60,11 @@ namespace CsvConvertExample.Implementations.FileIO
                                     if (index >= 1)
                                     {
                                         var fields = line.Split(',');
+                                        if (fields.Length > 4)
+                                        {
+                                            throw new FormatException("[" + filePath + "] file format is not correct for Person data-type.");
+                                        }
+
                                         var person = new Person
                                         {
                                             FirstName = fields[0],
@@ -74,7 +83,7 @@ namespace CsvConvertExample.Implementations.FileIO
 
                         mutex.ReleaseMutex();
                     }
-                } 
+                }
                 catch (Exception ex)
                 {
                     // TODO : handle the error.
@@ -83,7 +92,6 @@ namespace CsvConvertExample.Implementations.FileIO
                     throw ex; // re-throwing the error
                 }
             }
-
             return people;
         }
 

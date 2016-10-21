@@ -1,10 +1,14 @@
-﻿using System;
+﻿#region using block
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using CsvConvertExample.DataLayer;
 using CsvConvertExample.Implementations.Formatters;
 using NUnit.Framework;
 using Shouldly;
+
+#endregion
 
 namespace CsvConvertExampleUnitTest.Implementations.Formatters
 {
@@ -27,10 +31,9 @@ namespace CsvConvertExampleUnitTest.Implementations.Formatters
         [Test]
         public void Verify_If_PersonStreetAddressFormatterForCsv_Provides_Correct_Output()
         {
-
-            var list = new List<Person>()
+            var list = new List<Person>
             {
-                new Person()
+                new Person
                 {
                     FirstName = "Alice",
                     LastName = "Roman",
@@ -38,7 +41,7 @@ namespace CsvConvertExampleUnitTest.Implementations.Formatters
                     StreetAddress = "Peter Jackson",
                     PhoneNumber = 23213452
                 },
-                new Person()
+                new Person
                 {
                     FirstName = "Alice",
                     LastName = "Roman",
@@ -46,7 +49,7 @@ namespace CsvConvertExampleUnitTest.Implementations.Formatters
                     StreetAddress = "RPeter Jackson",
                     PhoneNumber = 23213452
                 },
-                new Person()
+                new Person
                 {
                     FirstName = "Alice",
                     LastName = "Roman",
@@ -54,7 +57,7 @@ namespace CsvConvertExampleUnitTest.Implementations.Formatters
                     StreetAddress = "Zyui Jackson",
                     PhoneNumber = 23213452
                 },
-                new Person()
+                new Person
                 {
                     FirstName = "Roman",
                     LastName = "Roman",
@@ -62,14 +65,14 @@ namespace CsvConvertExampleUnitTest.Implementations.Formatters
                     StreetAddress = "WWZ",
                     PhoneNumber = 44555555
                 },
-                new Person()
+                new Person
                 {
                     FirstName = "Jhon",
                     LastName = "Doe",
                     Address = "12 Peter Jackson",
                     StreetAddress = "Peter Jackson",
                     PhoneNumber = 3333333
-                },
+                }
             };
             string spliter = ",";
             var sb = new StringBuilder((list.Count * 5) + 5);

@@ -1,14 +1,14 @@
-﻿using System;
+﻿#region using block
+
+using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
 using CsvConvertExample.DataLayer;
-using CsvConvertExample.Implementations.FileIO;
 using CsvConvertExample.Implementations.Formatters;
-using Moq;
 using NUnit.Framework;
 using Shouldly;
+
+#endregion
 
 namespace CsvConvertExampleUnitTest.Implementations.Formatters
 {

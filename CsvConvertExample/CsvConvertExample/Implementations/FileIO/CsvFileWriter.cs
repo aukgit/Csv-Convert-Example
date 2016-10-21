@@ -11,6 +11,8 @@ namespace CsvConvertExample.Implementations.FileIO
 {
     public class CsvFileWriter : IFileWriter
     {
+        private static readonly object SyncRoot = new object();
+
         #region Implementation of IFileWriter
 
         /// <summary>
@@ -21,20 +23,22 @@ namespace CsvConvertExample.Implementations.FileIO
         /// <returns>Returns true if writing is successful.</returns>
         public bool Write(string filepath, string content)
         {
-            try
+            lock (SyncRoot)
             {
-                using (var mutex = new Mutex(true, "CSV-Processor"))
+                try
                 {
-                    mutex.WaitOne();
-                    File.WriteAllText(filepath, content);
-                    mutex.ReleaseMutex();
+                    using (var mutex = new Mutex(true, "CSV-Processor"))
+                    {
+                        mutex.WaitOne();
+                        File.WriteAllText(filepath, content);
+                        mutex.ReleaseMutex();
+                    }
+                } catch (Exception ex)
+                {
+                    // TODO : handle the error.
+                    // TODO : A logger should log it;
+                    throw; // re-throwing the error
                 }
-            } catch (Exception ex)
-            {
-                // TODO : handle the error.
-                // TODO : A logger shoul;
-                throw; // re-throwing the error
-                return false;
             }
 
             return true;

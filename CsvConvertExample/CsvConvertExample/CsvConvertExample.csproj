@@ -53,7 +53,7 @@
     <Compile Include="Implementations\CsvProcessor.cs" />
     <Compile Include="DataLayer\Interfaces\INameProperty.cs" />
     <Compile Include="Implementations\FileIO\CsvFileWriter.cs" />
-    <Compile Include="Implementations\FileIO\CsvReaderForPeople.cs" />
+    <Compile Include="Implementations\FileIO\CsvReaderForPerson.cs" />
     <Compile Include="Implementations\Formatters\PersonStreetAddressFormatterForCsv.cs" />
     <Compile Include="Implementations\Formatters\StreetNameExtractor.cs" />
     <Compile Include="Interfaces\Formatter\IPersonStreetAddressFormatterForCsv.cs" />

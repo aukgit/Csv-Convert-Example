@@ -14,7 +14,7 @@ using Ninject;
 
 namespace CsvConvertExample.Implementations.FileIO
 {
-    public class CsvReaderForPeople : ICsvReader<Person>
+    public class CsvReaderForPerson : ICsvReader<Person>
     {
         private static readonly object SyncRoot = new object();
 

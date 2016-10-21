@@ -15,13 +15,13 @@ using Ninject;
 
 namespace CsvConvertExample
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("- CSV processor instantiating.");
             var container = new StandardKernel();
-            container.Bind<ICsvReader<Person>>().To<CsvReaderForPeople>();
+            container.Bind<ICsvReader<Person>>().To<CsvReaderForPerson>();
             container.Bind<IFileWriter>().To<CsvFileWriter>();
 
             container.Bind<IPersonNameFrequencyFormatterForCsv<PeopleOrderByNameFrequency>>().To<PersonNameFrequencyFormatterForCsv>();
@@ -44,6 +44,8 @@ namespace CsvConvertExample
 
             // TODO : Also should have used a logger.
             // TODO : Could have refactor this to Action based delegates.
+
+            // Task #1 : Show the frequency of the first and last names ordered by frequency and then alphabetically. 
             Console.WriteLine("- [Start] filtering : sorting first and last by frequency of descending and then alphabetically.");
             var nameFrequencyFilteredResults = csvProcessor.OrderFilterByName(people);
             Console.WriteLine("- [Done] filtering : sorting first and last by frequency of descending and then alphabetically.");
@@ -52,6 +54,7 @@ namespace CsvConvertExample
             csvProcessor.WriteAsCsvFile(nameFrequencyFilteredResults, nameFrequencyFormatterForCsv, csvNameFrequencyFilePath);
             Console.WriteLine("- [Done] writing csv : " + csvNameFrequencyFilePath + ".");
 
+            // Task #2 : Show the addresses sorted alphabetically by street name.
             Console.WriteLine("- [Start] filtering : sorting address street name alphabetically.");
             var streetAddressFilteredAlphabeticallyResults = csvProcessor.OrderFilterByAddress(people);
             Console.WriteLine("- [Done] filtering : sorting address street name alphabetically.");
@@ -59,7 +62,8 @@ namespace CsvConvertExample
             Console.WriteLine("- [Start] writing csv : " + csvStreetFilterFilePath);
             csvProcessor.WriteAsCsvFile(streetAddressFilteredAlphabeticallyResults, streetAddressFormatterForCsv, csvStreetFilterFilePath);
             Console.WriteLine("- [Done] writing csv : " + csvStreetFilterFilePath + ".");
-            Console.WriteLine("- All operations are completed. Now press any key to exit.");
+            Console.WriteLine();
+            Console.WriteLine("- [Completed] : All operations are completed. Now press any key to exit.");
 
             Console.ReadKey();
         }

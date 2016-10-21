@@ -65,7 +65,7 @@
   <ItemGroup>
     <Compile Include="Implementations\CsvProcessorTest.cs" />
     <Compile Include="Implementations\FileIO\CsvFileWriterUnitTest.cs" />
-    <Compile Include="Implementations\FileIO\CsvReaderForPersonTest.cs" />
+    <Compile Include="Implementations\FileIO\CsvReaderForPersonUnitTest.cs" />
     <Compile Include="Implementations\Formatters\PersonNameFrequencyFormatterForCsvTest.cs" />
     <Compile Include="Implementations\Formatters\PersonStreetAddressFormatterForCsvTest.cs" />
     <Compile Include="Implementations\Formatters\StreetNameExtractorTest.cs" />

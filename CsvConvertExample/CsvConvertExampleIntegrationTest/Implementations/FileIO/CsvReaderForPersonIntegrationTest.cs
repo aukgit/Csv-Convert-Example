@@ -9,11 +9,10 @@ using Moq;
 using NUnit.Framework;
 using Shouldly;
 
-namespace CsvConvertExampleUnitTest.Implementations.FileIO
+namespace CsvConvertExampleIntegrationTest.Implementations.FileIO
 {
     public class CsvReaderForPersonIntegrationTest
     {
-        private Mock<CsvReaderForPerson> _mockCsvReader;
         private CsvReaderForPerson _csvReaderForPerson;
         private string _appStartupPath;
 
@@ -24,7 +23,6 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
             // Arrange
             // app start path differs from project to project.
             _appStartupPath = AppDomain.CurrentDomain.BaseDirectory + @"\";
-            _mockCsvReader = new Mock<CsvReaderForPerson>();
             var streetAddressExtractor = new StreetNameExtractor();
             _csvReaderForPerson = new CsvReaderForPerson(streetAddressExtractor);
         }
@@ -108,7 +106,7 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
         [OneTimeTearDown]
         public void CleanUp()
         {
-            _mockCsvReader = null;
+            _csvReaderForPerson = null;
             GC.Collect();
         }
     }

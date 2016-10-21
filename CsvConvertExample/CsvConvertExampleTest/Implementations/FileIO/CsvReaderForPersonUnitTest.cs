@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using CsvConvertExample.DataLayer;
 using CsvConvertExample.Implementations.FileIO;
+using CsvConvertExample.Implementations.Formatters;
+using CsvConvertExample.Interfaces.FileIO;
 using Moq;
 using NUnit.Framework;
 using Shouldly;
@@ -12,9 +14,7 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
 {
     public class CsvReaderForPersonUnitTest
     {
-        private Mock<CsvReaderForPerson> _mockCsvReader;
         private CsvReaderForPerson _csvReaderForPerson;
-        private string _appStartupPath;
 
         [OneTimeSetUp]
         public void Setup()
@@ -22,9 +22,9 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
             // AAA Syntax : Arrange, Act, Assert
             // Arrange
             // app start path differs from project to project.
-            _appStartupPath = AppDomain.CurrentDomain.BaseDirectory + @"\";
-            _mockCsvReader = new Mock<CsvReaderForPerson>();
-            _csvReaderForPerson = new CsvReaderForPerson();
+            // There is no need to mock. Because these test are not going to complete anyway. 
+            // There is a condition check which throws exception if path is not valid.
+            _csvReaderForPerson = new CsvReaderForPerson(new StreetNameExtractor());
         }
 
         [TestCase(@"...")]
@@ -36,16 +36,16 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
             // Act
 
             // (Using Shouldly) Assert : Assert and Act together
-            Should.Throw<FileNotFoundException>(() => _mockCsvReader.Object.ReadCsv(filePath));
+            Should.Throw<FileNotFoundException>(() => _csvReaderForPerson.ReadCsv(filePath));
 
             // (Using NUnit) Assert : Assert and Act together
-            Assert.Throws<FileNotFoundException>(() => _mockCsvReader.Object.ReadCsv(filePath));
+            Assert.Throws<FileNotFoundException>(() => _csvReaderForPerson.ReadCsv(filePath));
         }
 
         [OneTimeTearDown]
         public void CleanUp()
         {
-            _mockCsvReader = null;
+            _csvReaderForPerson = null;
             GC.Collect();
         }
     }

@@ -94,6 +94,7 @@ namespace CsvConvertExampleIntegrationTest.Implementations.FileIO
         [OneTimeTearDown]
         public void CleanUp()
         {
+            _csvFileWriter = null;
             GC.Collect();
         }
     }

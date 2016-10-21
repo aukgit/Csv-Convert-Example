@@ -11,11 +11,13 @@ namespace CsvConvertExample.DataLayer
         #region Constructors
 
         public Person()
-        {}
+        {
+        }
 
         public Person(INameProperty nameProperty)
             : this(nameProperty, null)
-        {}
+        {
+        }
 
         public Person(INameProperty nameProperty, IAddressProperty addressProperty)
         {

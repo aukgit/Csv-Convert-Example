@@ -74,10 +74,12 @@ namespace CsvConvertExample.Implementations.FileIO
 
                         mutex.ReleaseMutex();
                     }
-                } catch (Exception ex)
+                } 
+                catch (Exception ex)
                 {
                     // TODO : handle the error.
                     // TODO : A logger should log the exception.
+                    Console.WriteLine("- Error occurred during file reading : " + filePath);
                     throw ex; // re-throwing the error
                 }
             }

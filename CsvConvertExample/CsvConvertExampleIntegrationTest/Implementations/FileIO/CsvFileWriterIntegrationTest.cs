@@ -1,17 +1,14 @@
 ﻿#region using block
 
 using System;
-using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using CsvConvertExample.Implementations.FileIO;
-using Moq;
 using NUnit.Framework;
 using Shouldly;
 
 #endregion
 
-namespace CsvConvertExampleUnitTest.Implementations.FileIO
+namespace CsvConvertExampleIntegrationTest.Implementations.FileIO
 {
     [TestFixture]
     public class CsvFileWriterIntegrationTest
@@ -44,6 +41,32 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
 
         [TestCase("a.csv,a.csv,a.csv")]
         public void Should_Write_Same_Name_File_With_Multithread(string filePathsCsv)
+        {
+            // Arrange
+            var filePaths = filePathsCsv.Split(',');
+            int i = 0;
+
+            // Act
+            foreach (var filePath in filePaths)
+            {
+                var path = filePath;
+                int currentIndex = i; // copied varible.
+                var thread = new Thread(() =>
+                {
+                    var result = _csvFileWriter.Write(path, path + currentIndex);
+
+                    // (Using Shouldly) Assert : Assert and Act together
+                    result.ShouldBe(true);
+
+                    // (Using NUnit) Assert : Assert and Act together
+                    Assert.AreEqual(true, result);
+                });
+                thread.Start();
+            }
+        }
+
+        [TestCase("a.csv,a.csv,a.csv")]
+        public void Should_Overwrite_Same_File_In_Multithread(string filePathsCsv)
         {
             // Arrange
             var filePaths = filePathsCsv.Split(',');

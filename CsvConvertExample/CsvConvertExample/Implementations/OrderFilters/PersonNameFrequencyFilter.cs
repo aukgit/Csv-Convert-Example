@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using CsvConvertExample.DataLayer;
 using CsvConvertExample.Interfaces.OrderFilters;
 
@@ -24,22 +25,36 @@ namespace CsvConvertExample.Implementations.OrderFilters
         /// <returns>Returns list of person ordered by frequency and then alphabetically. </returns>
         public List<PeopleOrderByNameFrequency> OrderFilterByName(List<Person> people)
         {
-            var result = people.GroupBy(person => new NameProperty
+            var result = people.Select(n => new NameProperty()
             {
-                FirstName = person.FirstName,
-                LastName = person.LastName
+                FirstName = n.FirstName,
+                LastName = n.LastName
             })
-                               .Select(group => new PeopleOrderByNameFrequency
+                               .GroupBy(person => new
                                {
-                                   People = group,
+                                   person.FirstName,
+                                   person.LastName
+                               })
+                               .Select(group => new PeopleGroupCollector()
+                               {
+                                   NameProperty = group.FirstOrDefault(),
                                    Count = group.Count()
                                })
-                               .OrderByDescending(group => group.Count)
-                               .ThenBy(group => group.People.Key.FirstName)
-                               .ThenBy(group => group.People.Key.LastName)
+                               .OrderByDescending(n => n.Count)
+                               .ThenBy(n => n.NameProperty.FirstName)
+                               .ThenBy(n => n.NameProperty.LastName)
                                .ToList();
 
-            return result;
+            // just to keep consistency
+            var finalizeResults = new List<PeopleOrderByNameFrequency>
+            {
+                new PeopleOrderByNameFrequency()
+                {
+                    People = result
+                }
+            };
+
+            return finalizeResults;
         }
 
         #endregion

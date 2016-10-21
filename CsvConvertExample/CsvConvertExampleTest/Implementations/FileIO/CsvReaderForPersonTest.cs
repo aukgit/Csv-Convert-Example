@@ -24,6 +24,7 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
         [TestCase(@"...")]
         [TestCase(@"sample-directory-doesnt-exist\csv.csv")]
         [TestCase(@"sample-directory-doesnt-exist//")]
+        [TestCase(@"-------123.csv")]
         public void FileNotFoundException_Should_Be_Thorwn_If_File_Not_Present(string filePath)
         {
             // Act
@@ -41,7 +42,8 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
         {
             // Act
             // (Using Shouldly) Assert : Assert and Act together
-            var results = _mockCsvReader.Object.ReadCsv(filePath);
+            var results = _csvReaderForPerson.ReadCsv(filePath);
+            Assert.AreEqual(1, 1);
 
             // (Using NUnit) Assert : Assert and Act together
         }

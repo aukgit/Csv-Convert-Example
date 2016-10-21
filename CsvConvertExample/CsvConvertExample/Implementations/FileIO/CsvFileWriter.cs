@@ -33,10 +33,12 @@ namespace CsvConvertExample.Implementations.FileIO
                         File.WriteAllText(filepath, content);
                         mutex.ReleaseMutex();
                     }
-                } catch (Exception ex)
+                } 
+                catch (Exception ex)
                 {
                     // TODO : handle the error.
                     // TODO : A logger should log it;
+                    Console.WriteLine("- Error occurred during file writing : " + filepath);
                     throw; // re-throwing the error
                 }
             }

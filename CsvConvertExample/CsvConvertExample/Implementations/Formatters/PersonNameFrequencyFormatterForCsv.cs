@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using CsvConvertExample.DataLayer;
 using CsvConvertExample.Interfaces.Formatter;
@@ -10,23 +11,31 @@ using CsvConvertExample.Interfaces.Formatter;
 
 namespace CsvConvertExample.Implementations.Formatters
 {
+    /// <summary>
+    /// Format person's name frequency list.
+    /// </summary>
     public class PersonNameFrequencyFormatterForCsv : IPersonNameFrequencyFormatterForCsv<PeopleOrderByNameFrequency>
     {
         #region Implementation of IStringFormatter<PeopleOrderByNameFrequency>
 
-        public string GetFormattedStringFor(List<PeopleOrderByNameFrequency> names)
+        public string GetFormattedStringFor(List<PeopleOrderByNameFrequency> peopleOrderByNameFrequencies)
         {
             string spliter = ",";
-            var sb = new StringBuilder((names.Count * 5) + 5);
+            var sb = new StringBuilder((peopleOrderByNameFrequencies.Count * 5) + 5);
 
             // TODO : use string.format
             sb.AppendLine("FirstName" + spliter + "LastName" + spliter + "Frequency");
-            foreach (var name in names)
+            foreach (var peopleGroup in peopleOrderByNameFrequencies)
             {
-                foreach (var person in name.People)
+                foreach (var people in peopleGroup.People)
                 {
+                    var person = people.NameProperty;
+
                     // TODO : use string.format
-                    sb.AppendLine(person.FirstName + spliter + person.LastName + spliter + name.Count);
+                    if (person != null)
+                    {
+                        sb.AppendLine(person.FirstName + spliter + person.LastName + spliter + people.Count);
+                    }
                 }
             }
 

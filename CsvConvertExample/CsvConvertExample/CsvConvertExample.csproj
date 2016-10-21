@@ -79,7 +79,7 @@
     <Content Include="Data\sample-input-1.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\output\name-frequency.csv">
+    <Content Include="Data\output\test-file.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\sample-input-3.csv">

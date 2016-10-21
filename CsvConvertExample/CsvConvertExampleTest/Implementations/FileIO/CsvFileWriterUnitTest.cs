@@ -16,12 +16,14 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
     {
         private readonly string fileContent = "text-content";
         private Mock<CsvFileWriter> _mockCsvFileWriter;
+        private string _appStartupPath;
 
         [OneTimeSetUp]
         public void Setup()
         {
             // AAA Syntax : Arrange, Act, Assert
             // Arrange
+            _appStartupPath = AppDomain.CurrentDomain.BaseDirectory + @"\";
             _mockCsvFileWriter = new Mock<CsvFileWriter>();
         }
 
@@ -59,6 +61,32 @@ namespace CsvConvertExampleUnitTest.Implementations.FileIO
 
             // (Using NUnit) Assert : Assert and Act together
             Assert.Throws<IOException>(() => _mockCsvFileWriter.Object.Write(filePath, fileContent));
+        }
+
+        [Test]
+        public void Does_Data_Folder_Exist()
+        {
+            // Act
+            var exists = Directory.Exists(_appStartupPath + "data");
+
+            // (Using Shouldly) Assert : Assert and Act together
+            exists.ShouldBe(true, "Data folder is not copied to the compiled path. Make sure copy local is set.");
+
+            // (Using NUnit) Assert : Assert and Act together
+            Assert.AreEqual(true, exists);
+        }
+
+        [Test]
+        public void Does_Data_Output_Folder_Exist()
+        {
+            // Act
+            var exists = Directory.Exists(_appStartupPath + @"data\output");
+
+            // (Using Shouldly) Assert : Assert and Act together
+            exists.ShouldBe(true, "Data\\Output folder is not copied to the compiled path. Make sure copy local is set.");
+
+            // (Using NUnit) Assert : Assert and Act together
+            Assert.AreEqual(true, exists);
         }
 
         [OneTimeTearDown]

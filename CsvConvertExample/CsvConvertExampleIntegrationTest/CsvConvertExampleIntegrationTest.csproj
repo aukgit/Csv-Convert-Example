@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementations\FileIO\CsvFileWriterIntegrationTest.cs" />
+    <Compile Include="Implementations\FileIO\CsvReaderForPersonIntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

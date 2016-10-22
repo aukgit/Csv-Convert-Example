@@ -12,6 +12,7 @@ using Shouldly;
 
 namespace CsvConvertExampleUnitTest.Implementations.Formatters
 {
+    [TestFixture]
     public class PersonStreetAddressFormatterForCsvTest
     {
         private PersonStreetAddressFormatterForCsv _personStreetAddressFormatterForCsv;

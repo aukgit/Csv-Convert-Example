@@ -21,6 +21,8 @@ namespace CsvConvertExample
         public static void Main(string[] args)
         {
             Console.WriteLine("- CSV processor instantiating.");
+
+            // Binding using Ninject
             var container = new StandardKernel();
             container.Bind<ICsvReader<Person>>().To<CsvReaderForPerson>();
             container.Bind<IFileWriter>().To<CsvFileWriter>();
@@ -36,13 +38,13 @@ namespace CsvConvertExample
 
             var processingFileNames = new[] { "sample-input-1", "sample-input-2", "sample-input-3" };
             var relativeFolder = @"data\";
-            foreach (var file in processingFileNames)
+            foreach (var csvFileName in processingFileNames)
             {
-
-                Console.WriteLine("- [Start] Processing file : " + file);
-                var csvReadingPath = relativeFolder + file + @".csv";
-                var csvNameFrequencyFilePath = relativeFolder + @"output\" + file + "-name-frequency.csv";
-                var csvStreetFilterFilePath = relativeFolder + @"output\" + file + "-street-address-filtered-alphabetically.csv";
+                // TODO :  Could have used a timer to calculate elapsed time.
+                Console.WriteLine("- [Start] Processing file : " + csvFileName);
+                var csvReadingPath = relativeFolder + csvFileName + @".csv";
+                var csvNameFrequencyFilePath = relativeFolder + @"output\" + csvFileName + "-name-frequency.csv";
+                var csvStreetFilterFilePath = relativeFolder + @"output\" + csvFileName + "-street-address-filtered-alphabetically.csv";
 
                 // Reading Csv as collection of people (person).
                 Console.WriteLine("- [Start] Reading person data from csv : " + csvReadingPath);

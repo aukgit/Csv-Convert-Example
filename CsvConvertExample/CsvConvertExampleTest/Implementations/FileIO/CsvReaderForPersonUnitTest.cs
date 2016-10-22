@@ -11,6 +11,7 @@ using Shouldly;
 
 namespace CsvConvertExampleUnitTest.Implementations.FileIO
 {
+    [TestFixture]
     public class CsvReaderForPersonUnitTest
     {
         private CsvReaderForPerson _csvReaderForPerson;

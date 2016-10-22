@@ -9,6 +9,7 @@ using Shouldly;
 
 namespace CsvConvertExampleUnitTest.Implementations.Formatters
 {
+    [TestFixture]
     public class StreetNameExtractorTest
     {
         private StreetNameExtractor _streetNameExtractor;

@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generator.cs" />
     <Compile Include="Implementations\CsvProcessorTest.cs" />
     <Compile Include="Implementations\FileIO\CsvFileWriterUnitTest.cs" />
     <Compile Include="Implementations\FileIO\CsvReaderForPersonUnitTest.cs" />

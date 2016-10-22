@@ -85,6 +85,16 @@ namespace CsvConvertExampleUnitTest.Implementations.OrderFilters
             GC.Collect();
         }
 
+        /// <summary>
+        /// frequency of the first and last names ordered by frequency and then alphabetically
+        /// </summary>
+        [Test]
+        public void ThrowExceptionIf_Given_List_Of_People_Is_Null_When_Testing_Frequency_Filter_Where_First_Last_Names_Ordered_By_Frequency_And_Then_Alphabetically()
+        {
+            // Act
+            Should.Throw(_personNameFrequencyFilter.OrderFilterByName(null), "Null object passed.");
+        }
+
         [OneTimeTearDown]
         public void CleanUp()
         {

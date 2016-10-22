@@ -60,7 +60,7 @@ namespace CsvConvertExample.Implementations
             var result = FileWriter.Write(filePath, formatter.GetFormattedStringFor(list));
             if (result)
             {
-                Console.WriteLine("\"" + filePath + "\" file has been written successfully.");
+                Console.WriteLine("- [Written Successfully] : \"" + filePath + "\".");
             }
 
             return result;

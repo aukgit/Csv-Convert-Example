@@ -66,7 +66,7 @@ namespace CsvConvertExampleIntegrationTest.Implementations.FileIO
         }
 
         [TestCase("a.csv,a.csv,a.csv")]
-        public void Should_Overwrite_Same_File_In_Multithread(string filePathsCsv)
+        public void Should_Overwrite_Same_File_In_Multithreaded_Environment(string filePathsCsv)
         {
             // Arrange
             var filePaths = filePathsCsv.Split(',');
@@ -89,6 +89,12 @@ namespace CsvConvertExampleIntegrationTest.Implementations.FileIO
                 });
                 thread.Start();
             }
+        }
+
+        [TestCase("a.csv,a.csv,a.csv")]
+        public void Verify_Mutex_And_Lock_During_Threading_File_Writing(string filePathsCsv)
+        {
+            Should_Overwrite_Same_File_In_Multithreaded_Environment(filePathsCsv);
         }
 
         [OneTimeTearDown]

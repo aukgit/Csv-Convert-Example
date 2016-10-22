@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using CsvConvertExample.DataLayer;
 using CsvConvertExample.Implementations.OrderFilters;
@@ -89,10 +90,13 @@ namespace CsvConvertExampleUnitTest.Implementations.OrderFilters
         /// frequency of the first and last names ordered by frequency and then alphabetically
         /// </summary>
         [Test]
-        public void ThrowExceptionIf_Given_List_Of_People_Is_Null_When_Testing_Frequency_Filter_Where_First_Last_Names_Ordered_By_Frequency_And_Then_Alphabetically()
+        public void Throw_Exception_If_Given_List_Of_People_Is_Null_When_Testing_Frequency_Filter_Where_First_Last_Names_Ordered_By_Frequency_And_Then_Alphabetically()
         {
-            // Act
-            Should.Throw(_personNameFrequencyFilter.OrderFilterByName(null), "Null object passed.");
+            // Assert Using Shouldly.
+            Should.Throw<ArgumentNullException>(() => _personNameFrequencyFilter.OrderFilterByName(null));
+
+            // Assert Using NUnit.
+            Assert.Throws<ArgumentNullException>(() => _personNameFrequencyFilter.OrderFilterByName(null));
         }
 
         [OneTimeTearDown]

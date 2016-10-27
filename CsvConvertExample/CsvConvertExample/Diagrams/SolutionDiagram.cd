@@ -6,7 +6,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>
       <FileName>DataLayer\AddressProperty.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.DataLayer.NameProperty" BaseTypeListCollapsed="true">
     <Position X="19.5" Y="5.5" Width="1.5" />
@@ -14,7 +14,7 @@
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>DataLayer\NameProperty.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.DataLayer.PeopleGroupCollector">
     <Position X="21.25" Y="2.25" Width="1.5" />
@@ -36,7 +36,7 @@
       <HashCode>AAAAAEAAAAAAAAAAAAAAQAAAAAAAAAACAAAAAAAAABg=</HashCode>
       <FileName>DataLayer\Person.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.Implementations.CsvProcessor">
     <Position X="23" Y="2.25" Width="1.5" />
@@ -46,36 +46,36 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CsvConvertExample.Implementations.FileIO.CsvFileWriter" BaseTypeListCollapsed="true">
-    <Position X="21.25" Y="5.75" Width="1.5" />
+    <Position X="22" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Implementations\FileIO\CsvFileWriter.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.Implementations.FileIO.CsvReaderForPerson" BaseTypeListCollapsed="true">
-    <Position X="23" Y="7.5" Width="1.5" />
+    <Position X="27.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Implementations\FileIO\CsvReaderForPerson.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.Implementations.Formatters.PersonNameFrequencyFormatterForCsv" BaseTypeListCollapsed="true">
-    <Position X="23" Y="6" Width="1.5" />
+    <Position X="25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Implementations\Formatters\PersonNameFrequencyFormatterForCsv.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.Implementations.Formatters.PersonStreetAddressFormatterForCsv" BaseTypeListCollapsed="true">
-    <Position X="24.75" Y="7" Width="1.5" />
+    <Position X="25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Implementations\Formatters\PersonStreetAddressFormatterForCsv.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.Implementations.Formatters.StreetNameExtractor" BaseTypeListCollapsed="true">
     <Position X="19.5" Y="9.5" Width="1.5" />
@@ -83,7 +83,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Implementations\Formatters\StreetNameExtractor.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.Implementations.OrderFilters.PersonAddressOrderFilter" BaseTypeListCollapsed="true">
     <Position X="19.5" Y="7.5" Width="1.5" />
@@ -91,15 +91,15 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementations\OrderFilters\PersonAddressOrderFilter.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CsvConvertExample.Implementations.OrderFilters.PersonNameFrequencyFilter" BaseTypeListCollapsed="true">
-    <Position X="21.25" Y="7.75" Width="1.5" />
+    <Position X="22" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementations\OrderFilters\PersonNameFrequencyFilter.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="CsvConvertExample.Interfaces.IProcess">
     <Position X="5" Y="1.25" Width="1.5" />

@@ -35,6 +35,7 @@ namespace CsvConvertExample.Implementations.OrderFilters
                                    person.FirstName,
                                    person.LastName
                                })
+                               .ToList()
                                .Select(group => new PeopleGroupCollector()
                                {
                                    NameProperty = group.FirstOrDefault(),
